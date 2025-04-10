@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kết quả</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Kết quả của bạn</h1>
+        <p>Xin chào, {{ current_user.username }}! <a href="{{ url_for('logout') }}">Đăng xuất</a> | <a href="{{ url_for('index') }}">Quay lại trang chủ</a></p>
+        {% if results %}
+            <table>
+                <tr>
+                    <th>Môn học</th>
+                    <th>Điểm số</th>
+                </tr>
+                {% for result in results %}
+                <tr>
+                    <td>{{ result[1] }}</td>
+                    <td>{{ result[0] }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <p>Chưa có kết quả nào. Hãy làm quiz để xem điểm!</p>
+        {% endif %}
+    </div>
+</body>
+</html>

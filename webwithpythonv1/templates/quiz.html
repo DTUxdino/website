@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz - {{ subject[1] }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Quiz: {{ subject[1] }}</h1>
+        <form method="POST">
+            {% for question in questions %}
+            <div class="question">
+                <p><strong>Câu {{ loop.index }} ({{ question[1] }}):</strong> {{ question[2] }}</p>
+                {% if question[1] == 'multiple_choice' %}
+                    {% for option in question[3] %}
+                    <label><input type="radio" name="{{ question[0] }}" value="{{ option }}" required> {{ option }}</label><br>
+                    {% endfor %}
+                {% else %}
+                    <textarea name="{{ question[0] }}" placeholder="Nhập câu trả lời..." required></textarea>
+                {% endif %}
+            </div>
+            {% endfor %}
+            <input type="submit" value="Nộp bài">
+        </form>
+        <p><a href="{{ url_for('index') }}">Quay lại</a></p>
+    </div>
+</body>
+</html>

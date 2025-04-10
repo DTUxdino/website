@@ -1,0 +1,194 @@
+/* Import font Google Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Reset mặc định */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body */
+body {
+    background: linear-gradient(120deg, #1e3c72 0%, #2a5298 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Container chung */
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 700px;
+    backdrop-filter: blur(10px);
+}
+
+/* Tiêu đề */
+h1 {
+    color: #1e3c72;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 600;
+    font-size: 32px;
+    letter-spacing: 1px;
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Input và Textarea */
+input[type="text"], input[type="password"], textarea {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: #f0f4f8;
+    font-size: 16px;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="password"]:focus, textarea:focus {
+    background: #fff;
+    box-shadow: 0 0 10px rgba(46, 139, 192, 0.3);
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Nút */
+input[type="submit"], button {
+    background: linear-gradient(90deg, #2e8bc0 0%, #1e3c72 100%);
+    color: #fff;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.3s ease;
+}
+
+input[type="submit"]:hover, button:hover {
+    background: linear-gradient(90deg, #1e3c72 0%, #2e8bc0 100%);
+    transform: translateY(-2px);
+}
+
+/* Liên kết */
+a {
+    color: #2e8bc0;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #1e3c72;
+}
+
+/* Thông báo flash */
+ul {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+ul li {
+    background: #e74c3c;
+    color: #fff;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Bảng môn học */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    background: #fff;
+    border-radius: 10px;
+}
+
+th {
+    background: linear-gradient(90deg, #2e8bc0 0%, #1e3c72 100%);
+    color: #fff;
+    font-weight: 600;
+}
+
+td {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+td a {
+    background: #27ae60;
+    padding: 10px 20px;
+    color: #fff;
+    border-radius: 10px;
+    display: inline-block;
+    transition: background 0.3s ease;
+}
+
+td a:hover {
+    background: #219653;
+    text-decoration: none;
+}
+
+/* Quiz */
+.question {
+    background: #f0f4f8;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.question p {
+    color: #1e3c72;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+input[type="radio"] {
+    accent-color: #2e8bc0;
+    margin-right: 10px;
+}
+
+label {
+    color: #333;
+    font-size: 16px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+        max-width: 100%;
+    }
+    h1 {
+        font-size: 24px;
+    }
+    input[type="submit"], button {
+        padding: 12px;
+    }
+}

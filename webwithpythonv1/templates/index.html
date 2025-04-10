@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trang chủ</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Danh sách môn học</h1>
+        <p>Xin chào, {{ current_user.username }}! 
+            <a href="{{ url_for('results') }}">Xem kết quả</a> | 
+            <a href="{{ url_for('logout') }}">Đăng xuất</a>
+        </p>
+        <table>
+            <tr>
+                <th>Môn học</th>
+                <th>Hành động</th>
+            </tr>
+            {% for subject in subjects %}
+            <tr>
+                <td>{{ subject[1] }}</td>
+                <td><a href="{{ url_for('quiz', subject_id=subject[0]) }}">Làm quiz</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
